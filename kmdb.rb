@@ -93,6 +93,10 @@ studio = Studio.new
     studio["name"] = "Warner Bros."
 studio.save
 
+studio = Studio.new
+    studio["name"] = "Universal"
+studio.save
+
 actor = Actor.new
     actor["name"] = "Christian Bale"
 actor.save
@@ -268,13 +272,33 @@ role = Role.new
     role["character_name"] = "Selina Kyle"
 role.save
 
+batman_movies = Movie.all
+
 # Prints a header for the movies output
 puts "Movies"
-puts "======"
-puts ""
+
+puts "========"
+puts 
+
 
 # Query the movies data and loop through the results to display the movies output.
 # TODO!
+
+# loop through 
+for movie in batman_movies
+    # read each movie row's columns
+    title = movie["title"]
+    year = movie["year_released"]
+    rated = movie["rated"]
+
+    studio = Studio.find_by("id" => movie["studio_id"])
+    studio_name = studio["name"]
+
+    # display 
+    puts "#{title} #{  "-"  } #{year} #{  "-"  } #{rated} #{  "-"  } #{studio_name}"
+  end
+puts "======"
+puts ""
 
 # Prints a header for the cast output
 puts ""
@@ -284,3 +308,30 @@ puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie.
 # TODO!
+batman_roles = Role.all
+# loop through 
+for role in batman_roles
+    
+    movie = Movie.find_by("id" => role["movie_id"])
+    movie_name = movie["title"]
+    
+    actor = Actor.find_by("id" => role["actor_id"])
+    actor_name = actor["name"]
+   
+    character = role["character_name"]
+    
+
+    # display the first_name and last_name
+    puts "#{movie_name} #{  "-"  } #{actor_name} #{   "-"   } #{character}"
+  end
+puts "======"
+puts ""
+
+
+
+# Top Cast
+# ========
+
+# Batman Begins          Christian Bale        Bruce Wayne
+# Batman Begins          Michael Caine         Alfred
+# Batman Begins          Liam Neeson           Ra's Al Ghul
