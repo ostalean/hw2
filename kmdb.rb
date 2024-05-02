@@ -160,53 +160,112 @@ movie = Movie.new
     movie["studio_id"] = warner["id"]
 movie.save
 
+batman = Movie.find_by({ "title" => "Batman Begins"})
+batman_2 = Movie.find_by({ "title" => "The Dark Knight"})
+batman_3 = Movie.find_by({ "title" => "The Dark Knight Rises"})
+
+Bale = Actor.find_by({ "name" => "Christian Bale"})
+Caine = Actor.find_by({ "name" => "Michael Caine"})
+Neeson = Actor.find_by({ "name" => "Liam Neeson"})
+Holmes = Actor.find_by({ "name" => "Katie Holmes"})
+Oldman = Actor.find_by({ "name" => "Gary Oldman"})
+Ledger = Actor.find_by({ "name" => "Heath Ledger"})
+Eckhart = Actor.find_by({ "name" => "Aaron Eckhart"})
+Gyllenhaal = Actor.find_by({ "name" => "Maggie Gyllenhaal"})
+Hardy = Actor.find_by({ "name" => "Tom Hardy"})
+Gordon = Actor.find_by({ "name" => "Joseph Gordon-Levitt"})
+Hathaway = Actor.find_by({ "name" => "Anne Hathaway"})
+
 role = Role.new
-    role["movie_id"] =
-    role["actor_id"] =
+    role["movie_id"] = batman["id"]
+    role["actor_id"] = Bale["id"]
     role["character_name"] = "Bruce Wayne"
 role.save
 
-role = Role.new
-    role["movie_id"] =
-    role["actor_id"] =
-    role["character_name"] = "Bruce Wayne"
-role.save
 
 role = Role.new
-    role["movie_id"] =
-    role["actor_id"] =
-    role["character_name"] = "Bruce Wayne"
-role.save
-
-
-role = Role.new
-    role["movie_id"] =
-    role["actor_id"] =
+    role["movie_id"] = batman["id"]
+    role["actor_id"] = Caine["id"]
     role["character_name"] = "Alfred"
 role.save
 
+
 role = Role.new
-    role["movie_id"] =
-    role["actor_id"] =
+    role["movie_id"] = batman["id"]
+    role["actor_id"] = Neeson["id"]
     role["character_name"] = "Ra's Al Ghul"
 role.save
 
 role = Role.new
-    role["movie_id"] =
-    role["actor_id"] =
+    role["movie_id"] = batman["id"]
+    role["actor_id"] = Holmes["id"]
     role["character_name"] = "Rachel Dawes"
 role.save
 
 role = Role.new
-    role["movie_id"] =
-    role["actor_id"] =
+    role["movie_id"] = batman["id"]
+    role["actor_id"] = Oldman["id"]
     role["character_name"] = "Commissioner Gordon"
 role.save
 
 role = Role.new
-    role["movie_id"] =
-    role["actor_id"] =
+    role["movie_id"] = batman_2["id"]
+    role["actor_id"] = Bale["id"]
     role["character_name"] = "Bruce Wayne"
+role.save
+
+role = Role.new
+    role["movie_id"] = batman_2["id"]
+    role["actor_id"] = Caine["id"]
+    role["character_name"] = "Alfred"
+role.save
+
+role = Role.new
+    role["movie_id"] = batman_2["id"]
+    role["actor_id"] = Ledger["id"]
+    role["character_name"] = "Joker"
+role.save
+
+role = Role.new
+    role["movie_id"] = batman_2["id"]
+    role["actor_id"] =Eckhart["id"]
+    role["character_name"] = "Harvey Dent"
+role.save
+
+role = Role.new
+    role["movie_id"] = batman_2["id"]
+    role["actor_id"] = Gyllenhaal["id"]
+    role["character_name"] = "Rachel Dawes"
+role.save
+
+role = Role.new
+    role["movie_id"] = batman_3["id"]
+    role["actor_id"] = Bale["id"]
+    role["character_name"] = "Bruce Wayne"
+role.save
+
+role = Role.new
+    role["movie_id"] = batman_3["id"]
+    role["actor_id"] = Oldman["id"]
+    role["character_name"] = "Commissioner Gordon"
+role.save
+
+role = Role.new
+    role["movie_id"] = batman_3["id"]
+    role["actor_id"] = Hardy["id"]
+    role["character_name"] = "Bane"
+role.save
+
+role = Role.new
+    role["movie_id"] = batman_3["id"]
+    role["actor_id"] = Gordon["id"]
+    role["character_name"] = "John Blake"
+role.save
+
+role = Role.new
+    role["movie_id"] = batman_3["id"]
+    role["actor_id"] = Hathaway["id"]
+    role["character_name"] = "Selina Kyle"
 role.save
 
 # Prints a header for the movies output
